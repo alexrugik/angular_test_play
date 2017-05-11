@@ -18,7 +18,7 @@ export default class ImageService {
         this.saveImagesToLocalStorage();
     }
 
-    setImages(images) {
+    addImages(images) {
         if (!images && !images.push) {
             throw new Error('no array of images in setImages!');
         }
