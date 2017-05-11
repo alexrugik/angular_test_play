@@ -1,0 +1,1 @@
+export const ON_IMAGE_LOADED = 'ON_IMAGE_LOADED';

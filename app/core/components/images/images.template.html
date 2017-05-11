@@ -1,0 +1,7 @@
+<div class="image-zone">
+    <div class="image-box" ng-repeat="image in $ctrl.images" track by $index>
+        <img ng-src="{{image.url}}">
+        <p ng-bind="image.name"></p>
+        <p ng-bind="image.size"></p>
+    </div>
+</div>
