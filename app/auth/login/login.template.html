@@ -2,20 +2,27 @@
     <div class="row">
         <div class="col-lg-5 col-md-5">
             <h1>Sing in with your account</h1>
-            <form name="loginForm" novalidate>
+            <form name="$ctrl.loginForm" novalidate>
                 <div class="form-group">
                     <label>Email address</label>
-                    <input type="text"
+                    <input type="email"
+                           name="email"
                            class="form-control"
                            placeholder="your email"
                            ng-model="$ctrl.userForm.email"
-                           ng-minlength="2"
+                           ng-minlength="5"
                            ng-maxlength="30"
                            required>
+                    <p ng-show="$ctrl.loginForm.email.$invalid && !$ctrl.loginForm.email.$pristine"
+                       id="emailBlock"
+                       class="form-text text-muted">
+                        Your email must be 5-30 characters long
+                    </p>
                 </div>
                 <div class="form-group">
                     <label for="password">Password</label>
                     <input type="password"
+                           name="password"
                            class="form-control"
                            id="password"
                            placeholder="your password"
@@ -23,8 +30,17 @@
                            ng-minlength="2"
                            ng-maxlength="10"
                            required>
+                    <p ng-show="$ctrl.loginForm.password.$invalid && !$ctrl.loginForm.password.$pristine"
+                       id="passwordBlock"
+                       class="form-texttext-muted">
+                        Your password must be 2-10 characters long
+                    </p>
                 </div>
-                <button ng-click="$ctrl.onLogin()" type="submit" class="btn btn-default">Submit</button>
+                <button
+                        ng-class="{disabled: $ctrl.loginForm.$invalid}"
+                        ng-click="$ctrl.onLogin()"
+                        type="submit"
+                        class="btn btn-default">Submit</button>
             </form>
         </div>
     </div>
