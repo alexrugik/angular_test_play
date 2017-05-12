@@ -1,12 +1,17 @@
-<div class="image-zone">
-    <div class="image-box" ng-repeat="image in $ctrl.images" track by $index>
-        <img ng-src="{{image.url}}">
-        <p ng-bind="image.name"></p>
-        <p ng-bind="image.size"></p>
-        <p ng-bind="image.imageName"></p>
-        <p ng-bind="image.uploadedUser.email"></p>
-        <p ng-bind="image.fileSize"></p>
-        <p ng-bind="image.checksum"></p>
-    <button ng-click="$ctrl.onRemoveImage(image)" class="btn-primary">delete image </button>
+<div class="row image-zone">
+    <div class="col-md-4 image-box" ng-repeat="image in $ctrl.images" track by $index>
+        <div class="image-block">
+            <img ng-src="{{image.url}}">
+        </div>
+        <div class="info-block">
+            <p ng-bind="image.name"></p>
+            <p ng-bind="image.size"></p>
+            <p ng-bind="image.imageName"></p>
+            <p ng-bind="image.uploadedUser.email"></p>
+            <p ng-bind="image.fileSize"></p>
+            <p ng-bind="image.checksum"></p>
+        </div>
+
+        <button ng-click="$ctrl.onRemoveImage(image)" class="btn-danger delete-btn">X</button>
     </div>
 </div>

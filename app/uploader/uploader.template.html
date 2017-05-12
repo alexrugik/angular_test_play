@@ -1,6 +1,20 @@
-<div dropzone>Drop Files Here</div>
-<image-list images="$ctrl.images"></image-list>
-<div>
-    <button ng-click="$ctrl.onClearImages()" class="btn-primary">Clear all Images</button>
-    <button ng-click="$ctrl.onSaveImages()" class="btn-primary">Save Images</button>
+<div class="upload-block">
+    <h3>Upload image</h3>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                <div dropzone>Drop Files Here</div>
+            </div>
+            <div class="col-md-6">
+                <image-list images="$ctrl.images"></image-list>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="upload-footer">
+        <button ng-click="$ctrl.onClearImages()" class="btn-primary">Clear all Images</button>
+        <button ng-click="$ctrl.onSaveImages()" class="btn-primary">Save Images</button>
+    </div>
 </div>
