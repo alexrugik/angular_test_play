@@ -4,14 +4,13 @@
             <h1>Sing in with your account</h1>
             <form name="loginForm" novalidate>
                 <div class="form-group">
-                    <label for="formEmail">Email address</label>
+                    <label>Email address</label>
                     <input type="text"
                            class="form-control"
-                           id="formEmail"
                            placeholder="your email"
                            ng-model="$ctrl.userForm.email"
                            ng-minlength="2"
-                           ng-maxlength="10"
+                           ng-maxlength="30"
                            required>
                 </div>
                 <div class="form-group">

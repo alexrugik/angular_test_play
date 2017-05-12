@@ -1,6 +1,7 @@
 export default class ImageService {
     constructor($localStorage,
                 authService) {
+        window.image = this;
         this.$localStorage = $localStorage;
         this.authService = authService;
         this.__images = [];

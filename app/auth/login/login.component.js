@@ -10,7 +10,7 @@ class Login {
     $onInit() {
         this.userForm = {
             email: '',
-            password: ''
+            password: '',
         };
     }
 
@@ -19,12 +19,12 @@ class Login {
             .then(response => {
                 const users = response.data.users;
                 return users.find(user => {
-                    return user.id === 0;
+                    return user.email === this.userForm.email && user.email === this.userForm.email;
                 });
             })
             .then(user => {
+                console.log(this.userForm);
                 this.authService.addLoggedUser(user);
-
                 if (this.authService.isAuthorized()) {
                     this.$state.go('app.table');
                 }

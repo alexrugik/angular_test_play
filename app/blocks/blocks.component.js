@@ -1,6 +1,6 @@
 class BlocksController {
-    constructor() {
-
+    constructor(imageService) {
+        this.imageService = imageService;
     }
 
     $onInit() {
@@ -8,7 +8,7 @@ class BlocksController {
     }
 }
 
-BlocksController.$inject = [];
+BlocksController.$inject = ['imageService'];
 
 export default angular.module('app.blocks', [])
     .component('blocks', {

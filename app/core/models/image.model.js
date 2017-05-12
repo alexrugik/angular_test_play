@@ -7,6 +7,7 @@ export default class ImageModel {
         this.id = id++;
         this.fileSize = imageObject.size;
         this.imageName = imageObject.name;
+        this.url = imageObject.url;
         this.uploadedUser = uploadedUser;
         this.checksum = this.getCheckSum(this.fileSize);
     }

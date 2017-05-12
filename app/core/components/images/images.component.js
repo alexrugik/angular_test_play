@@ -5,6 +5,11 @@ class ImagesController {
 
     $onInit() {
     }
+
+    onRemoveImage(img) {
+        const index = this.images.findIndex(image => image.id === img.id);
+        this.images.splice(index, 1);
+    }
 }
 
 ImagesController.$inject = [];
