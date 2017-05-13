@@ -16,7 +16,7 @@ class TableController {
     }
 
     onShowModal(image) {
-        this.$scope.$emit(ON_SHOW_MODAL, {image})
+        this.$scope.$broadcast(ON_SHOW_MODAL, {image})
     }
 }
 

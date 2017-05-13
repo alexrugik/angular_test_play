@@ -6,7 +6,7 @@ class ImageModalController {
     }
 
     $onInit() {
-
+        this.modalIsShowed = false;
     }
 
     $onDestroy() {
@@ -14,14 +14,26 @@ class ImageModalController {
     }
 
     addEventListeners($scope) {
-        this.offShowModal = $scope.$on(ON_SHOW_MODAL, this.showImage().bind(this));
+        this.offShowModal = $scope.$on(ON_SHOW_MODAL, this.showModal.bind(this));
     }
 
-    showImage(event, data) {
-        if (!data && !data.image) {
+    showModal(event, data) {
+        if (!data) {
+            throw new Error('no data in showModal!');
+        }
+        this.modalIsShowed = true;
+        this.setImage(data.image);
+    }
+
+    setImage(image) {
+        if (!image && !image.image) {
             return;
         }
-        this.image = data.image;
+        this.image = image.image;
+    }
+
+    onCloseModal() {
+        this.modalIsShowed = false;
     }
 }
 

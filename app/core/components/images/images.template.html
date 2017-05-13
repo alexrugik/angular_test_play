@@ -3,5 +3,14 @@
         <div class="image-block">
             <img ng-src="{{image.url}}">
         </div>
+        <div class="info-block">
+            <p ng-bind="image.name"></p>
+            <p ng-bind="image.size"></p>
+            <p ng-bind="image.imageName"></p>
+            <p ng-bind="image.uploadedUser.email"></p>
+            <p ng-bind="image.fileSize"></p>
+            <p ng-bind="image.checksum"></p>
+        </div>
+        <button ng-click="$ctrl.onRemoveImage(image)" class="btn-danger delete-btn">X</button>
     </div>
 </div>
