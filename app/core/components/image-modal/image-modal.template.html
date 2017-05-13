@@ -1,0 +1,25 @@
+<div class="modal fade" id="imageModal" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <p>Image preview Modal</p>
+                <div class="col-md-4 image-box">
+                    <div class="image-block">
+                        <img ng-src="{{$ctrl.image.url}}">
+                    </div>
+                    <div class="info-block">
+                        <p ng-bind="$ctrl.image.name"></p>
+                        <p ng-bind="$ctrl.image.size"></p>
+                        <p ng-bind="$ctrl.image.imageName"></p>
+                        <p ng-bind="$ctrl.image.uploadedUser.email"></p>
+                        <p ng-bind="$ctrl.image.fileSize"></p>
+                        <p ng-bind="$ctrl.image.checksum"></p>
+                    </div>
+
+                    <button ng-click="$ctrl.onRemoveImage(image)" class="btn-danger delete-btn">X</button>
+                </div
+            </div>
+        </div>
+
+    </div>
+</div>

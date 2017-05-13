@@ -1,5 +1,9 @@
+import {ON_SHOW_MODAL} from '../core/const/events.const';
+
 class TableController {
-    constructor(imageService) {
+    constructor($scope,
+                imageService) {
+        this.$scope = $scope;
         this.imageService = imageService;
     }
 
@@ -10,9 +14,16 @@ class TableController {
     onRemoveImage(image) {
         this.imageService.removeImage(image);
     }
+
+    onShowModal(image) {
+        this.$scope.$emit(ON_SHOW_MODAL, {image})
+    }
 }
 
-TableController.$inject = ['imageService'];
+TableController.$inject = [
+    '$scope',
+    'imageService'
+];
 
 export default angular.module('app.table', [])
     .component('table', {

@@ -1,3 +1,3 @@
 export const ON_IMAGE_LOADED = 'ON_IMAGE_LOADED';
 export const ON_IMAGE_REMOVE = 'ON_IMAGE_REMOVE';
-``
+export const ON_SHOW_MODAL = 'ON_SHOW_MODAL';

@@ -14,8 +14,12 @@ class UploaderController {
         this.images = [];
     }
 
+    $onDestroy() {
+        this.offImageLoaded();
+    }
+
     addEventListeners($scope) {
-        $scope.$on(ON_IMAGE_LOADED, this.onLoadImage.bind(this));
+        this.offImageLoaded = $scope.$on(ON_IMAGE_LOADED, this.onLoadImage.bind(this));
     }
 
     onLoadImage(event, image) {
