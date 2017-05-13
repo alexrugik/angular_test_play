@@ -5,7 +5,6 @@ export default class ImageService {
         this.authService = authService;
         this.__images = [];
         this.restoreImagesFromLocalStorage();
-        window.images = this;
     }
 
     getImages() {

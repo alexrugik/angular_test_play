@@ -31,7 +31,7 @@ class Login {
     }
 
     getUsers() {
-        return this.$http.get('./app/auth/users.json');
+        return this.$http.get('./app/modules/auth/users.json');
     }
 }
 

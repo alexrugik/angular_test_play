@@ -57,19 +57,19 @@ module.exports = {
         new webpack.NoErrorsPlugin(),
         new CopyWebpackPlugin([
                 {
-                    context: path.resolve(__dirname + 'app'),
+                    context: path.resolve(__dirname, 'app'),
                     from: '**/*.html',
-                    to: path.resolve(__dirname + 'web/app')
+                    to: path.resolve(__dirname, 'web/app')
                 },
                 {
                     context: __dirname,
-                    from: path.resolve(__dirname + 'app/index.html'),
-                    to: path.resolve(__dirname + 'web')
+                    from: path.resolve(__dirname, 'app/index.html'),
+                    to: path.resolve(__dirname, 'web')
                 },
                 {
-                    context: path.resolve(__dirname + 'app'),
+                    context: path.resolve(__dirname, 'app'),
                     from: '**/*.json',
-                    to: path.resolve(__dirname + 'web/app')
+                    to: path.resolve(__dirname, 'web/app')
                 },
             ],
             {

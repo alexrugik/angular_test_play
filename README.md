@@ -5,3 +5,4 @@ How to install?</br>
 2)npm run watch</br>
 3)npm run server (localhost:7777 must be free)</br>
 4)go localhost:7777
+5) try to login with test@gmail.com -123
