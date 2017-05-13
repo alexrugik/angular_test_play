@@ -16,7 +16,6 @@ var path = require('path');
 
 var webpack = require('webpack');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
-var WebpackDevServer = require('webpack-dev-server');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var WebpackBrowserPlugin = require('webpack-browser-plugin');
 
@@ -36,12 +35,12 @@ module.exports = {
     },
     module: {
         loaders: [
-            {test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader'},
+            { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' },
             {
                 test: /\.css$/,
                 loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
             },
-            {test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000'},
+            { test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000' },
             {
                 test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
                 loader: 'file-loader',
@@ -60,19 +59,19 @@ module.exports = {
         new webpack.NoErrorsPlugin(),
         new CopyWebpackPlugin([
                 {
-                    context: __dirname + '/app/',
+                    context: path.resolve(__dirname + 'app'),
                     from: '**/*.html',
-                    to: __dirname + '/web/app/'
+                    to: path.resolve(__dirname + 'web/app')
                 },
                 {
                     context: __dirname,
-                    from: 'index.html',
-                    to: __dirname + '/web/'
+                    from: path.resolve(__dirname + 'app/index.html'),
+                    to: path.resolve(__dirname + 'web')
                 },
                 {
-                    context: __dirname + '/app/',
+                    context: path.resolve(__dirname + 'app'),
                     from: '**/*.json',
-                    to: __dirname + '/web/app/'
+                    to: path.resolve(__dirname + 'web/app')
                 },
             ],
             {
