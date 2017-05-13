@@ -19,7 +19,7 @@ class Login {
             .then(response => {
                 const users = response.data.users;
                 return users.find(user => {
-                    return user.email === this.userForm.email && user.email === this.userForm.email;
+                    return user.email === this.userForm.email && user.password === this.userForm.password;
                 });
             })
             .then(user => {
