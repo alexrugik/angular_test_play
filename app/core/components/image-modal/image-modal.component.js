@@ -10,7 +10,7 @@ class ImageModalController {
     }
 
     $onDestroy() {
-        this.this.offShowModal();
+        this.offShowModal();
     }
 
     addEventListeners($scope) {
