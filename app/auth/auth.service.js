@@ -26,6 +26,15 @@ export default class AuthService {
         return !!this.getLoggedUser();
     }
 
+    resetUserData() {
+        this.removeUserFromLocalStorage();
+        this.__loggedUser = false;
+    }
+
+    getLoggedUserSpaceName() {
+        return this.getLoggedUser().email;
+    }
+
     restoreUserFromLocalStorage() {
         if (!this.$localStorage.loggedUser) {
             return;
@@ -38,18 +47,9 @@ export default class AuthService {
         return this;
     }
 
-    resetLocalStorageData() {
+    removeUserFromLocalStorage() {
         delete this.$localStorage.loggedUser;
         return this;
-    }
-
-    resetUserData() {
-        this.resetLocalStorageData();
-        this.__loggedUser = false;
-    }
-
-    getLoggedUserSpaceName() {
-        return this.getLoggedUser().email;
     }
 }
 
