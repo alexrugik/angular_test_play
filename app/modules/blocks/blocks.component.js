@@ -12,7 +12,7 @@ BlocksController.$inject = ['imageService'];
 
 export default angular.module('app.blocks', [])
     .component('blocks', {
-        templateUrl: "app/blocks/blocks.template.html",
+        templateUrl: "app/modules/blocks/blocks.template.html",
         controller: BlocksController,
         controllerAs: '$ctrl'
     })

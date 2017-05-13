@@ -37,7 +37,7 @@ class Login {
 
 export default  angular.module('app.auth.login', [])
     .component('login', {
-        templateUrl: 'app/auth/login/login.template.html',
+        templateUrl: 'app/modules/auth/login/login.template.html',
         controller: Login,
         controllerAs: '$ctrl'
     })

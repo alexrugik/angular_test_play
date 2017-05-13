@@ -1,5 +1,5 @@
-import {ON_IMAGE_LOADED} from '../core/const/events.const';
-import ImageModel from '../core/models/image.model';
+import {ON_IMAGE_LOADED} from '../../core/const/events.const';
+import ImageModel from '../../core/models/image.model';
 
 class UploaderController {
     constructor($scope,
@@ -54,7 +54,7 @@ UploaderController.$inject = [
 
 export default angular.module('app.uploader', [])
     .component('uploader', {
-        templateUrl: "app/uploader/uploader.template.html",
+        templateUrl: "app/modules/uploader/uploader.template.html",
         controller: UploaderController,
         controllerAs: '$ctrl'
     })

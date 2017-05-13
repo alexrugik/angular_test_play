@@ -1,4 +1,4 @@
-import {AUTH_STATES} from '../core/const/states.const';
+import {AUTH_STATES} from '../../core/const/states.const';
 
 export default angular.module('app.auth.route', [])
     .config(Route)
