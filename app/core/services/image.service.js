@@ -39,8 +39,17 @@ export default class ImageService {
         this.saveImagesToLocalStorage();
     }
 
+    removeImages() {
+        this.getImages().length = 0;
+        this.removeImagesFromLocalStorage();
+    }
+
     saveImagesToLocalStorage() {
         this.$localStorage[this.authService.getLoggedUserSpaceName()] = this.getImages();
+    }
+
+    removeImagesFromLocalStorage() {
+        delete this.$localStorage[this.$localStorage[this.authService.getLoggedUserSpaceName()]];
     }
 
     restoreImagesFromLocalStorage() {

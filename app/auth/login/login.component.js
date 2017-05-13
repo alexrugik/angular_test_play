@@ -23,7 +23,6 @@ class Login {
                 });
             })
             .then(user => {
-                console.log(this.userForm);
                 this.authService.addLoggedUser(user);
                 if (this.authService.isAuthorized()) {
                     this.$state.go('app.table');

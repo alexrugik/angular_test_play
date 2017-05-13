@@ -1,5 +1,3 @@
-import {ON_IMAGE_REMOVE} from '../core/const/events.const';
-
 class TableController {
     constructor(imageService) {
         this.imageService = imageService;

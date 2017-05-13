@@ -1,6 +1,6 @@
 import sha256 from 'js-sha256';
 
-let id = 0;
+let id = Math.round(Math.random() * 1000);
 
 export default class ImageModel {
     constructor(imageObject, uploadedUser) {

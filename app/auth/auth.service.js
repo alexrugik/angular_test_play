@@ -40,7 +40,6 @@ export default class AuthService {
 
     resetLocalStorageData() {
         delete this.$localStorage.loggedUser;
-        delete this.$localStorage[this.getLoggedUser().email];
         return this;
     }
 

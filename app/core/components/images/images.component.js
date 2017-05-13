@@ -1,17 +1,22 @@
 class ImagesController {
-    constructor() {
+    constructor(imageService) {
+        this.imageService = imageService;
     }
 
     $onInit() {
     }
 
-    onRemoveImage(img) {
-        const index = this.images.findIndex(image => image.id === img.id);
+    onRemoveImage(image) {
+        if (typeof(image.id) === 'number') {
+            this.imageService.removeImage(image);
+            return;
+        }
+        const index = this.images.findIndex(img => img.id === image.id);
         this.images.splice(index, 1);
     }
 }
 
-ImagesController.$inject = [];
+ImagesController.$inject = ['imageService'];
 
 export default angular.module('app.core.components.images', [])
     .component('imageList', {
