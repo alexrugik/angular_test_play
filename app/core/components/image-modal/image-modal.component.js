@@ -29,7 +29,7 @@ class ImageModalController {
         if (!image && !image.image) {
             return;
         }
-        this.image = image.image;
+        this.image = image;
     }
 
     onCloseModal() {
