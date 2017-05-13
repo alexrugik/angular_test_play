@@ -40,6 +40,7 @@ export default class ImageService {
     }
 
     removeImages() {
+        console.log('here');
         this.getImages().length = 0;
         this.removeImagesFromLocalStorage();
     }
@@ -49,7 +50,7 @@ export default class ImageService {
     }
 
     removeImagesFromLocalStorage() {
-        delete this.$localStorage[this.$localStorage[this.authService.getLoggedUserSpaceName()]];
+        delete this.$localStorage[this.authService.getLoggedUserSpaceName()];
     }
 
     restoreImagesFromLocalStorage() {
