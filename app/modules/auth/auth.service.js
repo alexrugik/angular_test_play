@@ -27,7 +27,7 @@ export default class AuthService {
     }
 
     resetUserData() {
-        this.removeUserFromLocalStorage();
+        this.$localStorage.$reset();
         this.__loggedUser = false;
     }
 
@@ -44,11 +44,6 @@ export default class AuthService {
 
     saveToLocalStorage() {
         this.$localStorage.loggedUser = this.getLoggedUser();
-        return this;
-    }
-
-    removeUserFromLocalStorage() {
-        delete this.$localStorage.loggedUser;
         return this;
     }
 }
