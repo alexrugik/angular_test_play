@@ -4,6 +4,7 @@ export default class ImageService {
         this.$localStorage = $localStorage;
         this.authService = authService;
         this.__images = [];
+        this.restoreImagesFromLocalStorage();
     }
 
     getImages() {
@@ -12,9 +13,9 @@ export default class ImageService {
 
     addImage(image) {
         if (!image) {
-            throw  new Error('no image in addImage');
+            throw  new Error('no image in addImage!');
         }
-        this.__images.push(image);
+        this.getImages().push(image);
         this.saveImagesToLocalStorage();
     }
 
@@ -22,12 +23,31 @@ export default class ImageService {
         if (!images && !images.push) {
             throw new Error('no array of images in setImages!');
         }
-        this.__images.push(...images);
+        this.getImages().push(...images);
+        this.saveImagesToLocalStorage();
+    }
+
+    removeImage(image) {
+        if (!image) {
+            throw new Error('no image in removeImage!');
+        }
+        const index = this.getImages().findIndex(img => img.id === image.id);
+        if (index === -1) {
+            return;
+        }
+        this.getImages().splice(index, 1);
         this.saveImagesToLocalStorage();
     }
 
     saveImagesToLocalStorage() {
         this.$localStorage[this.authService.getLoggedUserSpaceName()] = this.getImages();
+    }
+
+    restoreImagesFromLocalStorage() {
+        if (!this.$localStorage[this.authService.getLoggedUserSpaceName()]) {
+            return;
+        }
+        this.__images.push(...this.$localStorage[this.authService.getLoggedUserSpaceName()]);
     }
 }
 

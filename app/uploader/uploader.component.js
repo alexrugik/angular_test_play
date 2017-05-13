@@ -26,6 +26,7 @@ class UploaderController {
         this.images.forEach(image => {
             this.imageService.addImage(this.createImageModel(image));
         });
+        this.onClearImages();
     }
 
     onClearImages() {
@@ -34,6 +35,10 @@ class UploaderController {
 
     createImageModel(image) {
         return new ImageModel(image, this.authService.getLoggedUser());
+    }
+
+    isShowButtonBlock() {
+        return this.images.length > 0;
     }
 }
 

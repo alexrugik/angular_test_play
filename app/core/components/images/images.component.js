@@ -1,6 +1,5 @@
 class ImagesController {
     constructor() {
-
     }
 
     $onInit() {

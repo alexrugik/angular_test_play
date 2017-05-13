@@ -13,7 +13,7 @@
     </div>
 
 
-    <div class="upload-footer">
+    <div ng-show="$ctrl.isShowButtonBlock()" class="upload-footer">
         <button ng-click="$ctrl.onClearImages()" class="btn-primary">Clear all Images</button>
         <button ng-click="$ctrl.onSaveImages()" class="btn-primary">Save Images</button>
     </div>
