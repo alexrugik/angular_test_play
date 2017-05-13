@@ -1,4 +1,4 @@
-import styles from '../assets/assets.module';
+import styles from './assets/assets.module';
 import AuthModule from './modules/auth/auth.module';
 import CoreModule from './core/core.module';
 import AppRun from './app.run';

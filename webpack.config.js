@@ -88,7 +88,6 @@ module.exports = {
             },
             beautify: false,
             mangle: false,
-            sourceMap: true
         }),
         new webpack.optimize.DedupePlugin()
     ],
