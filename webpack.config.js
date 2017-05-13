@@ -13,11 +13,9 @@ var dependency = [
 ];
 
 var path = require('path');
-
 var webpack = require('webpack');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var WebpackBrowserPlugin = require('webpack-browser-plugin');
 
 module.exports = {
     context: __dirname + '/app',
@@ -88,13 +86,15 @@ module.exports = {
             compress: {
                 warnings: false
             },
-            beautify: true,
-            mangle: false
+            beautify: false,
+            mangle: false,
+            sourceMap: true
         }),
         new webpack.optimize.DedupePlugin()
     ],
     devServer: {
         contentBase: './web',
+        port: 7777,
         watchOptions: {
             aggregateTimeout: 300,
             poll: 1000
